@@ -1,0 +1,41 @@
+﻿<div class="jumbotron">
+    <h1>Sparrow Notes</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <form action="/note" method="post">
+            <h3>Add Notes:</h3>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="Title" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Text</label>
+                <textarea name="Text" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Add Note" />
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-8">
+        <h3>Your Notes:</h3>
+        <div class="row">
+            @foreach (var note in ViewBag.Notes)
+            {
+                <div class="col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>@note.Title</strong>
+                            <a href="/delete/@note.NoteId" class="close">&times;</a>
+                        </div>
+                        <div class="panel-body">
+                            @note.Text
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
