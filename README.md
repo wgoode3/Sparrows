@@ -15,7 +15,7 @@ Run the following commands.
 
 ```shell
 dotnet new dojo -o Sparrows
-cd sparrow
+cd Sparrows
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 2.1.4
 ```
 
